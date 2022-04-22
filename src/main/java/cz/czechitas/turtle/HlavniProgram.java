@@ -10,9 +10,13 @@ public class HlavniProgram {
         Turtle zofka;
 
         zofka = new Turtle();
-        // nakresliRovnostrannyTrojuhelnik(zofka, 120);
+        zofka.setSpeed(10);
+         //nakresliRovnoramennyTrojuhelnik(zofka, 120);
         //nakresliObdelnik(zofka, 100, 200);
-        nakresliKolecko(zofka, 1);
+       // nakresliKolecko(zofka, 10);
+        nakresliRovnoramennyTrojuhelnik(zofka,100);
+        //nakresliKolecko2(zofka,100);
+
     }
 
 
@@ -21,9 +25,26 @@ public class HlavniProgram {
         nakresliMnohouhelnik(zelva, velikostStrany, 3);
 
     }
+    private void nakresliRovnoramennyTrojuhelnik(Turtle zelva, double velikostStrany) {
+
+        zelva.move(velikostStrany-0.3*velikostStrany);
+        zelva.turnLeft(110.0);
+        zelva.move(velikostStrany);
+        zelva.turnLeft(140.0);
+        zelva.move(velikostStrany);
+        zelva.turnLeft(110.0);
+
+    }
     private void nakresliKolecko(Turtle zelva, double velikostStrany) {
 
         nakresliMnohouhelnik(zelva, velikostStrany, 24);
+
+    }
+
+    private void nakresliKolecko2(Turtle zelva, double polomer) {
+        int pocetStran =24;
+        double obvod=  (2 * polomer * 3.14);
+        nakresliMnohouhelnik(zelva, obvod/pocetStran, pocetStran);
 
     }
     private void nakresliCtverec(Turtle zelva, double velikostStrany) {
